@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://iogmcu45ccwu"]
+[gd_scene load_steps=5 format=3 uid="uid://iogmcu45ccwu"]
 
-[ext_resource type="Script" path="res://characters/Player/PlayerScript.gd" id="1_fva6u"]
+[ext_resource type="Script" path="res://characters/Player/player.gd" id="1_goo2o"]
+[ext_resource type="PackedScene" uid="uid://bt0yogldixvth" path="res://scripts/components/PlayerMovement.tscn" id="1_pt5ju"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7vhpj"]
 
@@ -9,10 +10,14 @@ radius = 0.486956
 height = 1.0087
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_goo2o")
+
+[node name="PlayerMovement" parent="." node_paths=PackedStringArray("character_body_2d") instance=ExtResource("1_pt5ju")]
+scale = Vector2(50, 115)
+character_body_2d = NodePath("../CharacterBody2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 scale = Vector2(50, 115)
-script = ExtResource("1_fva6u")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = SubResource("PlaceholderTexture2D_7vhpj")
