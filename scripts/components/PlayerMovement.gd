@@ -43,18 +43,3 @@ func _get_direction() -> Vector2:
 		"ui_up", 
 		"ui_down"
 	);
-
-
-# func calculate_speed(delta: float) -> float:
-#     if(_target_direction == Vector2.ZERO || _target_direction != _previous_direction):
-#         return clampf(speed - deceleration * delta, 0, speed);
-		
-# 	return clampf(speed + acceleration * delta, 0, max_speed);
-
-# func get_direction() -> Vector2:
-# 	return Input.get_vector(
-# 		"ui_left", 
-# 		"ui_right", 
-# 		"ui_up", 
-# 		"ui_down"
-# 	);
