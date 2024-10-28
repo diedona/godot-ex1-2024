@@ -21,6 +21,10 @@ window/size/viewport_width=720
 window/size/viewport_height=450
 window/size/resizable=false
 
+[global_group]
+
+Player=""
+
 [input]
 
 ui_left={

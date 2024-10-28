@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://iogmcu45ccwu"]
 
 [ext_resource type="Script" path="res://characters/Player/player.gd" id="1_goo2o"]
-[ext_resource type="PackedScene" uid="uid://bt0yogldixvth" path="res://scripts/components/PlayerMovement.tscn" id="1_pt5ju"]
+[ext_resource type="PackedScene" uid="uid://bt0yogldixvth" path="res://scripts/components/PlayerMovement/PlayerMovement.tscn" id="1_pt5ju"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7vhpj"]
 
