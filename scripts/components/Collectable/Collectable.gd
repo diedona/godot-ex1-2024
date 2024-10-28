@@ -9,4 +9,5 @@ func _ready() -> void:
 	print_debug("collectable ready");
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	parent.queue_free();
+	if(body.owner.is_in_group("Player")):
+		parent.queue_free();

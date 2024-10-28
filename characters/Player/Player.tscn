@@ -9,7 +9,7 @@
 radius = 0.486956
 height = 1.0087
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_goo2o")
 
 [node name="PlayerMovement" parent="." node_paths=PackedStringArray("character_body_2d") instance=ExtResource("1_pt5ju")]
