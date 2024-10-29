@@ -30,12 +30,19 @@ position = Vector2(316, 229)
 [node name="Coin6" parent="." instance=ExtResource("2_br764")]
 position = Vector2(561, 233)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 17.0
-offset_top = 410.0
-offset_right = 57.0
-offset_bottom = 433.0
-text = "Godots coletados: 0"
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 416.0
+offset_right = 149.0
+offset_bottom = 439.0
+text = "Godots coletados:"
 
-[node name="Score" parent="." node_paths=PackedStringArray("label") instance=ExtResource("3_jysk4")]
-label = NodePath("../Label")
+[node name="ScorePointsLabel" type="Label" parent="."]
+offset_left = 159.0
+offset_top = 416.0
+offset_right = 206.0
+offset_bottom = 439.0
+text = "0"
+
+[node name="Score" parent="." node_paths=PackedStringArray("label_score") instance=ExtResource("3_jysk4")]
+label_score = NodePath("../ScorePointsLabel")
