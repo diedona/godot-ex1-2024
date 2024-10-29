@@ -9,3 +9,4 @@ func _ready() -> void:
 
 func _on_collectable_collected() -> void:
 	coin_collected.emit();
+	queue_free();
