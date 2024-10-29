@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var score: Node;
+@export var score: Score;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

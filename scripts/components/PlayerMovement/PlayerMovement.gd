@@ -1,4 +1,5 @@
 extends Node
+class_name PlayerMovement
 
 @export var acceleration: int  = 1000;
 @export var deceleration: int  = 1500;

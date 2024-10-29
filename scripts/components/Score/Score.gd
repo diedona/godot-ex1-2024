@@ -1,4 +1,5 @@
 extends Node2D
+class_name Score
 
 @export var label: Label;
 
@@ -9,4 +10,5 @@ func _ready() -> void:
 	assert(label != null, "label is empty");
 
 func on_coin_collected() -> void:
-	print_debug("collected");
+	_score += 1;
+	print_debug("score: ", _score);
