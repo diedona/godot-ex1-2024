@@ -1,27 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c11f5ysjiawvg"]
+[gd_scene load_steps=5 format=3 uid="uid://c11f5ysjiawvg"]
 
 [ext_resource type="Script" path="res://collectables/coin/coin.gd" id="1_16cy8"]
 [ext_resource type="PackedScene" uid="uid://bim1gsdjer4yu" path="res://scripts/components/Collectable/Collectable.tscn" id="1_g2f8b"]
 [ext_resource type="Texture2D" uid="uid://cliiql2jtnp5i" path="res://icon.svg" id="1_o2swb"]
-
-[sub_resource type="GDScript" id="GDScript_en0jt"]
-script/source = "extends Node
-
-signal collected();
-
-@export var parent: Node2D;
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	assert(parent != null, \"parent is not set\");
-	
-	print_debug(\"collectable ready\");
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.owner.is_in_group(\"Player\")):
-		parent.queue_free();
-		collected.emit();
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqo3g"]
 size = Vector2(38, 38)
@@ -29,9 +10,7 @@ size = Vector2(38, 38)
 [node name="Coin" type="Node2D" groups=["Collectable"]]
 script = ExtResource("1_16cy8")
 
-[node name="Collectable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("1_g2f8b")]
-script = SubResource("GDScript_en0jt")
-parent = NodePath("..")
+[node name="Collectable" parent="." instance=ExtResource("1_g2f8b")]
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -42,5 +21,4 @@ texture = ExtResource("1_o2swb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_lqo3g")
 
-[connection signal="collected" from="Collectable" to="." method="_on_collectable_collected"]
 [connection signal="body_entered" from="Area2D" to="Collectable" method="_on_area_2d_body_entered"]

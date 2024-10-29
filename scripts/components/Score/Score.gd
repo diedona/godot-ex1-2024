@@ -9,7 +9,8 @@ var _score: int = 0;
 func _ready() -> void:
 	assert(label_score != null, "label_score is null");
 
-func on_coin_collected() -> void:
+func on_coin_collected(body: Node2D) -> void:
+	#print_debug(body);
 	_score += 1;
 	update_score();
 
