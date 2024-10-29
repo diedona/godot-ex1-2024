@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4c2rcxooicv5"]
+[gd_scene load_steps=4 format=3 uid="uid://b4c2rcxooicv5"]
 
 [ext_resource type="PackedScene" uid="uid://iogmcu45ccwu" path="res://characters/Player/Player.tscn" id="1_ou1sj"]
 [ext_resource type="PackedScene" uid="uid://c11f5ysjiawvg" path="res://collectables/coin/coin.tscn" id="2_br764"]
+[ext_resource type="PackedScene" uid="uid://bloqqh5ysr28f" path="res://scripts/components/Score/Score.tscn" id="3_jysk4"]
 
 [node name="StartScene" type="Node2D"]
 
@@ -9,10 +10,29 @@
 position = Vector2(90, 94)
 
 [node name="Coin" parent="." instance=ExtResource("2_br764")]
-position = Vector2(633, 54)
+position = Vector2(441, 91)
 
 [node name="Coin2" parent="." instance=ExtResource("2_br764")]
-position = Vector2(103, 386)
+position = Vector2(315, 88)
 
 [node name="Coin3" parent="." instance=ExtResource("2_br764")]
-position = Vector2(623, 374)
+position = Vector2(560, 92)
+
+[node name="Coin4" parent="." instance=ExtResource("2_br764")]
+position = Vector2(442, 232)
+
+[node name="Coin5" parent="." instance=ExtResource("2_br764")]
+position = Vector2(316, 229)
+
+[node name="Coin6" parent="." instance=ExtResource("2_br764")]
+position = Vector2(561, 233)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 410.0
+offset_right = 57.0
+offset_bottom = 433.0
+text = "Godots coletados: 0"
+
+[node name="Score" parent="." node_paths=PackedStringArray("label") instance=ExtResource("3_jysk4")]
+label = NodePath("../Label")
